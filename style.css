@@ -1,8 +1,112 @@
+/* General Styles */
 body {
-  font-family: Arial, sans-serif;
-  padding: 10px;
-  background: #f9f9f9;
-  color: #333;
-  width: 200px;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Main Container */
+.container {
+  background: #ffffff;
+  width: 360px;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   text-align: center;
+}
+
+/* Title */
+.title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #1e3a8a;
+}
+
+/* Language Dropdowns */
+.lang-select {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.lang-select label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #374151;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.lang-select select {
+  width: 140px;
+  padding: 6px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+  background-color: #f9fafb;
+  transition: all 0.3s ease;
+}
+
+.lang-select select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.4);
+}
+
+/* Input Text */
+textarea {
+  width: 90%;
+  min-height: 80px;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 10px;
+  resize: none;
+  font-size: 14px;
+  outline: none;
+  background: #f9fafb;
+  margin-bottom: 15px;
+  transition: border 0.3s ease;
+}
+
+textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59,130,246,0.3);
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #1d4ed8, #1e40af);
+}
+
+/* Result Box */
+#resultBox {
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 12px;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  min-height: 60px;
+  font-size: 14px;
+  text-align: left;
+  color: #111827;
 }
