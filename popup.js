@@ -1,54 +1,16 @@
-// Replace with your actual Groq API key
-const GROQ_API_KEY = "YOUR_GROQ_API_KEY";
+// popup.js
 
-// Select DOM elements
-const translateBtn = document.getElementById("translateBtn");
-const inputText = document.getElementById("inputText");
-const fromLang = document.getElementById("fromLang");
-const toLang = document.getElementById("toLang");
-const resultDiv = document.getElementById("resultBox");
+document.getElementById("translateBtn").addEventListener("click", () => {
+  const fromLang = document.getElementById("fromLang").value;
+  const toLang = document.getElementById("toLang").value;
+  const inputText = document.getElementById("inputText").value;
 
-translateBtn.addEventListener("click", async () => {
-  const text = inputText.value.trim();
-  const source = fromLang.value;
-  const target = toLang.value;
-
-  if (!text) {
-    resultDiv.innerText = "Please enter some text!";
+  if (!inputText) {
+    alert("Please enter some text to translate!");
     return;
   }
 
-  resultDiv.innerText = "Translating...";
-
-  try {
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${GROQ_API_KEY}`,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        model: "llama-3.1-8b-instant", // You can use another Groq model if needed
-        messages: [
-          {
-            role: "system",
-            content: "You are a translation assistant."
-          },
-          {
-            role: "user",
-            content: `Translate this text from ${source} to ${target}: ${text}`
-          }
-        ]
-      })
-    });
-
-    const data = await response.json();
-    const translation = data.choices[0].message.content;
-
-    resultDiv.innerText = translation;
-
-  } catch (error) {
-    console.error("Translation Error:", error);
-    resultDiv.innerText = "Failed to translate. Please try again.";
-  }
+  // For now just simulate translation (we will connect Groq API later)
+  document.getElementById("outputText").value = 
+    `[Simulated Translation] (${fromLang} → ${toLang}): ${inputText}`;
 });
