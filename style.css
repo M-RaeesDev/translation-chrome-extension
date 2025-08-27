@@ -88,3 +88,30 @@ textarea:focus {
 #translateBtn:hover {
   background-color: #005f61;
 }
+
+/* Dark mode styles - add these to your existing style.css */
+body.dark {
+  background-color: #0f1720; /* dark background */
+  color: #e6eef0;
+}
+
+body.dark .popup-container {
+  background: #071014;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+body.dark textarea {
+  background: #0b1114;
+  color: #e6eef0;
+  border: 1px solid #233036;
+}
+
+body.dark select {
+  background: #081019;
+  color: #e6eef0;
+  border: 1px solid #233036;
+}
+
+body.dark #translateBtn {
+  background-color: #0f7b76;
+}
