@@ -1,0 +1,115 @@
+/* Floating Popup Main Container */
+#translate-popup {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  min-width: 320px;
+  max-width: 600px;        /* max width reduce for readability */
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.12);
+  font-family: "Segoe UI", Arial, sans-serif;
+  z-index: 999999;
+  display: none;
+  overflow: hidden;
+}
+
+/* Header Section */
+#popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+  font-weight: 600;
+  background: #f9f9f9;
+  border-radius: 10px 10px 0 0;
+}
+
+/* Dropdown container in header */
+#popup-header div {
+  display: flex;
+  align-items: center;
+}
+
+/* Dropdowns */
+.lang-select {
+  width: 110px;
+  margin: 0 5px;
+  padding: 4px 6px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  cursor: pointer;
+  transition: border 0.2s;
+}
+
+.lang-select:focus {
+  outline: none;
+  border: 1px solid #00777b;
+}
+
+/* Translation Result Box */
+#popup-result {
+  padding: 12px;
+  min-height: 3.6em;       /* 3 lines minimum */
+  max-height: 6em;         /* scroll after ~6 lines */
+  font-size: 14px;
+  line-height: 1.2em;
+  border-top: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #fcfcfc;
+}
+
+/* Slim scrollbar for modern look */
+#popup-result::-webkit-scrollbar {
+  width: 6px;
+}
+#popup-result::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 3px;
+}
+#popup-result::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Footer Section */
+#popup-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 10px;
+  background: #f9f9f9;
+  border-radius: 0 0 10px 10px;
+}
+
+/* Common button styles */
+#copy-btn,
+#close-btn {
+  background: #00777b;
+  color: #fff;
+  border: none;
+  padding: 5px 12px;
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#copy-btn:hover,
+#close-btn:hover {
+  transform: scale(1.05);
+  background: #009599;
+}
+
+#copy-btn:active,
+#close-btn:active {
+  transform: scale(0.95);
+}

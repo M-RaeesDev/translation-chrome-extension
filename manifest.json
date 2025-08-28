@@ -1,10 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "Ai Translation Extension",
+  "name": "Quick Translate",
   "version": "1.0",
-  "description": "Ai powered Chrome Extension for text translation.",
-  "permissions": ["storage", "activeTab", "scripting"],
+  "description": "Translate selected text on any webpage",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"]
+    }
+  ]
 }
