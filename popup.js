@@ -1,8 +1,8 @@
 /* ---------- popup.js (Full advanced features) ---------- */
 
-const GROQ_API_KEY = "Api_key"; 
+const GROQ_API_KEY = "api-here"; 
 const GROQ_API_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL_NAME = "llama3-8b-8192";
+const MODEL_NAME = "llama-3.1-8b-instant";
 
 const LANGUAGE_NAMES = {
   auto: "Auto Detect",
@@ -101,38 +101,6 @@ document.getElementById("fromLang").addEventListener("change", () => {
   if (!v.startsWith("detected-")) removeDetectedTempOption();
 });
 
-// Dark mode injection
-function injectDarkModeToggle() {
-  const container = document.querySelector(".popup-container");
-  if (!container) return;
-
-  const toggleWrapper = document.createElement("div");
-  toggleWrapper.style.display = "flex";
-  toggleWrapper.style.justifyContent = "flex-end";
-  toggleWrapper.style.marginBottom = "8px";
-
-  const btn = document.createElement("button");
-  btn.id = "darkModeToggle";
-  btn.innerText = "🌙";
-  btn.title = "Toggle dark mode";
-  btn.style.border = "none";
-  btn.style.background = "transparent";
-  btn.style.cursor = "pointer";
-  btn.style.fontSize = "18px";
-  btn.style.padding = "4px";
-
-  toggleWrapper.appendChild(btn);
-  container.insertBefore(toggleWrapper, container.firstChild);
-
-  btn.addEventListener("click", () => {
-    const isDark = document.body.classList.toggle("dark");
-    localStorage.setItem("quickTranslateDark", isDark ? "1" : "0");
-  });
-
-  const saved = localStorage.getItem("quickTranslateDark");
-  if (saved === "1") document.body.classList.add("dark");
-}
-
 async function translateFlow() {
   const inputEl = document.getElementById("inputText");
   const outputEl = document.getElementById("outputText");
@@ -204,7 +172,21 @@ async function translateFlow() {
 
 // Setup DOM listeners
 document.addEventListener("DOMContentLoaded", () => {
-  injectDarkModeToggle();
-
   document.getElementById("translateBtn").addEventListener("click", translateFlow);
 });
+
+const toggleBtn = document.getElementById("themeToggle");
+
+toggleBtn.addEventListener("click", () => {
+  const isDark = document.body.classList.toggle("dark");
+  toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+
+  if (isDark) {
+    toggleBtn.textContent = "☀️"; 
+    toggleBtn.setAttribute("title", "Light Theme"); 
+  } else {
+    toggleBtn.textContent = "🌙"; 
+    toggleBtn.setAttribute("title", "Dark Theme");
+  }
+});
+

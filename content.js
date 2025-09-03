@@ -149,7 +149,7 @@ async function translateText(text) {
     }
 
     resultEl.innerText = translation || "No translation returned.";
-    translationDone = true; // ✅ allow outside click to close now
+    translationDone = true; // allow outside click to close now
 
     // Copy button
     const copyBtn = document.getElementById("copy-btn");

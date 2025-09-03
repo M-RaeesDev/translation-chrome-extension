@@ -11,12 +11,19 @@ body {
   padding: 15px;
 }
 
+.popup-container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
 /* Title */
 .title {
   font-size: 18px;
   font-weight: bold;
   color: #006d77;
-  margin-bottom: 15px;
+  margin: 0; /* remove extra gap */
 }
 
 /* Dropdown section */
@@ -114,4 +121,17 @@ body.dark select {
 
 body.dark #translateBtn {
   background-color: #0f7b76;
+}
+
+/* Theme toggle button */
+.theme-toggle {
+  font-size: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.2);
 }
